@@ -1,0 +1,46 @@
+﻿Use DataDict.pkg
+Use ValidadorEmail.pkg
+
+Open schoolhouse
+Open student
+
+Register_Function validarError_Email Integer iField Returns Boolean
+Class cschoolhouseDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to schoolhouse.File_Number
+
+        Set Add_Client_File to student.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Key_Field_State Field schoolhouse.ID to True
+
+        Set Field_Option Field schoolhouse.Name DD_REQUIRED to True
+        
+        Set Field_Option Field schoolhouse.Email DD_REQUIRED to True
+        Set Field_Option Field schoolhouse.City DD_REQUIRED to True
+        
+        Set Field_Validate_msg Field schoolhouse.Email to get_validarError_Email
+    End_Procedure
+
+
+    Function validarError_Email Integer iField Returns Boolean
+        Boolean bRet
+        String sMsg sEmail
+        
+        Get Field_Current_Value Field schoolhouse.Email to sEmail
+        Get ValidadorEmail sEmail (&sMsg) to bRet
+        
+        If (bRet) Begin
+            Send Data_set_error iField DFERR_OPERATOR sMsg
+        End
+        Function_Return (bRet)
+        
+    End_Function
+    
+End_Class

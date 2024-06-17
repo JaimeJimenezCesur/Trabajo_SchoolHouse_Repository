@@ -1,0 +1,13 @@
+[Header]
+Mask=*.src;*.vw;*.sl;*.dg;*.rv;*.bp;*.pkg;*.wo;*.dd;*.inc;*.tpl;*.dfo;*.asp;*.asa;*.html;*.css;*.js
+Active=0
+SubDirectories=1
+WholeWordOnly=0
+SearchWhere=0
+Location=C:\Users\Usuario\Desktop\Trabajo Jaime\Trabajos\WorkspaceSchoolStudent\IdeSrc\Usuario_FindInFiles.dsk
+[C:\Users\Usuario\Desktop\Trabajo Jaime\Trabajos\WorkspaceSchoolStudent\AppSrc]
+IsEnabled=1
+[C:\Users\Usuario\Desktop\Trabajo Jaime\Trabajos\WorkspaceSchoolStudent\DDSrc]
+IsEnabled=1
+[C:\Users\Usuario\Desktop\Trabajo Jaime\Trabajos\WorkspaceSchoolStudent\AppHtml]
+IsEnabled=1

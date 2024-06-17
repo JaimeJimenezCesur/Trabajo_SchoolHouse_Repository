@@ -1,0 +1,90 @@
+﻿Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+Use cWebButton.pkg
+Use cWebGroup.pkg
+Use cWebSpacer.pkg
+Use cWebHtmlBox.pkg
+Use cWebMenuGroup.pkg
+Use cWebMenuItem.pkg
+Use cWebLabel.pkg
+Use cWebList.pkg
+Use cWebColumn.pkg
+
+Object oDashboard is a cWebView
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+    // Add a DDO Structure 
+    //
+    // There is no need to synchronize a DD structure on the client so we do
+    // not set the Server property or send ADDOStructure. We will simply use
+    // DDO's to mine data and generate HTML for our cWebHTMLBox objects.
+    // It is the HTML in these objects that is sent to the client each time 
+    // this page is shown.
+    //
+    // Also, it is important for the drill-down Navigation interface that we
+    // do not set the Server property to some DDO because this will affect 
+    // constraints in the next view that we navigate to.
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    Set piMaxWidth to 1024
+    
+    Set psCaption to "Dashboard"
+    Set peViewType to vtUndefined
+    Set pbShowCaption to False
+    Set psCSSClass to "Dashboard"
+    
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 24
+        
+        // - - - - - - - - - - - - - - -
+        // Main Panel's Responsive Rules
+        // - - - - - - - - - - - - - - -
+        WebSetResponsive piColumnCount rmMobile to 1
+        WebSetResponsive piColumnCount rmTabletPortrait to 16
+    
+        Object oTiles_grp is a cWebGroup
+            Set piColumnSpan to 30
+            Set pbShowBorder to False
+            Set pbShowCaption to False
+            Set piColumnCount to 12
+            
+            Set psCSSClass to "TilesGroup"
+    
+            Object oTile1 is a cWebHtmlBox
+                Set pbServerOnClick to True
+                Set piColumnSpan to 10
+                Set psCSSClass to "Tile Dark"
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Students</div><div class="Tile_Subtitle">Muestra de los estudiantes registrados</div></div>'
+    
+                WebRegisterPath ntNavigateForwardCustom oSelectStudent
+                
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
+                End_Procedure
+                
+            End_Object
+    
+            Object oTile2 is a cWebHtmlBox
+                Set pbServerOnClick to True
+                Set piColumnSpan to 10
+                Set piColumnIndex to 6
+                Set psCSSClass to "Tile Dark"
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">School Houses</div><div class="Tile_Subtitle">Muestra de los centros registrados</div></div>'
+            
+                WebRegisterPath ntNavigateForwardCustom oSelectSchoolHouse
+                
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
+                End_Procedure
+                
+            End_Object
+        End_Object
+    
+    End_Object
+    
+    Procedure OnBeforeShow
+        // Each time this view is shown we will update the appropriate information.
+    End_Procedure
+
+End_Object
