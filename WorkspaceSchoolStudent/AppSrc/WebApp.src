@@ -12,12 +12,13 @@ Object oWebApp is a cWebApp
     Set psTheme to "Df_Flat_Touch"
     Set peAlignView to alignCenter
     
+    
     // It is important to set this so that all views will default
     // to drill down style views.
     Set peApplicationStyle to wvsDrillDown   
     Set peApplicationStateMode to asmHistoryAndUrls 
     Set psEncryptPassword to "J>cZw#-xCKBoUj6{(F4r%DnFD|QOxMn3`$xS|G7R"
-
+    
     Object oViewStack is a cWebViewStack
     End_Object
     

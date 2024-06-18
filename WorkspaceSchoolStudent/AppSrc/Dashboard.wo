@@ -29,6 +29,7 @@ Object oDashboard is a cWebView
 
     Set piMaxWidth to 1024
     
+    // Set psbackgroundcolor to "Gray"
     Set psCaption to "Dashboard"
     Set peViewType to vtUndefined
     Set pbShowCaption to False

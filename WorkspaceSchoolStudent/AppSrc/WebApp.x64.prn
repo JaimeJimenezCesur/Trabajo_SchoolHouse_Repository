@@ -1,5 +1,5 @@
 Compiling Program: C:\Users\Usuario\Documents\GitHub\Trabajo_SchoolHouse_Repository\WorkspaceSchoolStudent\AppSrc\WebApp.src
-Memory Available: 52149145600
+Memory Available: 51762360320
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 24.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -130,12 +130,13 @@ Including file: LoginEncryptionKey.inc    (C:\Users\Usuario\Documents\GitHub\Tra
 36079>    Set psTheme to "Df_Flat_Touch"
 36080>    Set peAlignView to alignCenter
 36081>    
+36081>    
 36081>    // It is important to set this so that all views will default
 36081>    // to drill down style views.
 36081>    Set peApplicationStyle to wvsDrillDown   
 36082>    Set peApplicationStateMode to asmHistoryAndUrls 
 36083>    Set psEncryptPassword to "J>cZw#-xCKBoUj6{(F4r%DnFD|QOxMn3`$xS|G7R"
-36084>
+36084>    
 36084>    Object oViewStack is a cWebViewStack
 36086>    End_Object
 36087>    
@@ -960,6 +961,7 @@ Including file: Dashboard.wo    (C:\Users\Usuario\Documents\GitHub\Trabajo_Schoo
 36673>>>
 36673>>>    Set piMaxWidth to 1024
 36674>>>    
+36674>>>    // Set psbackgroundcolor to "Gray"
 36674>>>    Set psCaption to "Dashboard"
 36675>>>    Set peViewType to vtUndefined
 36676>>>    Set pbShowCaption to False
@@ -3486,7 +3488,7 @@ Including file: Student.wo    (C:\Users\Usuario\Documents\GitHub\Trabajo_SchoolH
 38490>Send StartWebApp of oWebApp
 38491>
 Summary
-Memory Available: 52135280640
+Memory Available: 51756953600
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25548
