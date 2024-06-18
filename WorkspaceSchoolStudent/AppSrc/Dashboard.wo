@@ -47,7 +47,7 @@ Object oDashboard is a cWebView
             Set piColumnSpan to 30
             Set pbShowBorder to False
             Set pbShowCaption to False
-            Set piColumnCount to 12
+            Set piColumnCount to 20
             
             Set psCSSClass to "TilesGroup"
     
@@ -55,7 +55,7 @@ Object oDashboard is a cWebView
                 Set pbServerOnClick to True
                 Set piColumnSpan to 10
                 Set psCSSClass to "Tile Dark"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Students</div><div class="Tile_Subtitle">Muestra de los estudiantes registrados</div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Students</div><div class="Tile_Subtitle">Shows the registered students</div></div>'
     
                 WebRegisterPath ntNavigateForwardCustom oSelectStudent
                 
@@ -68,11 +68,40 @@ Object oDashboard is a cWebView
             Object oTile2 is a cWebHtmlBox
                 Set pbServerOnClick to True
                 Set piColumnSpan to 10
-                Set piColumnIndex to 6
+                Set piColumnIndex to 10
                 Set psCSSClass to "Tile Dark"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">School Houses</div><div class="Tile_Subtitle">Muestra de los centros registrados</div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">New Student</div><div class="Tile_Subtitle">Form to insert a new student</div></div>'
             
+                WebRegisterPath ntNavigateForwardCustom oZoomStudent
+                
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
+                End_Procedure
+                
+            End_Object
+            
+            Object oTile3 is a cWebHtmlBox
+                Set pbServerOnClick to True
+                Set piColumnSpan to 10
+                Set psCSSClass to "Tile Dark"
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">School Houses</div><div class="Tile_Subtitle">Shows the registered school houses</div></div>'
+    
                 WebRegisterPath ntNavigateForwardCustom oSelectSchoolHouse
+                
+                Procedure OnClick String sId String sParam
+                    Send NavigatePath
+                End_Procedure
+                
+            End_Object
+    
+            Object oTile4 is a cWebHtmlBox
+                Set pbServerOnClick to True
+                Set piColumnSpan to 10
+                Set piColumnIndex to 10
+                Set psCSSClass to "Tile Dark"
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">New School House</div><div class="Tile_Subtitle">Form to insert a new school house</div></div>'
+            
+                WebRegisterPath ntNavigateForwardCustom oZoomSchoolHouse
                 
                 Procedure OnClick String sId String sParam
                     Send NavigatePath

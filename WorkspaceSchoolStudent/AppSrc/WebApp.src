@@ -41,7 +41,7 @@ Object oWebApp is a cWebApp
                 Set piMenuHeight to 500
 
                 Object oDashboard_itm is a cWebMenuItem
-                    Set psCaption to C_$Dashboard
+                    Set psCaption to "Dashboard"
                     
                     WebRegisterPath ntNavigateBegin oDashboard
 
@@ -51,7 +51,7 @@ Object oWebApp is a cWebApp
                 End_Object
 
                 Object oViewMenu is a cWebMenuItem
-                    Set psCaption to C_$View
+                    Set psCaption to "Selects"
 
                     Object oSelectSchoolHouseItem1 is a cWebMenuItem
                         Set psCaption to "SelectSchoolHouse"
@@ -75,9 +75,35 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
                 End_Object
+                
+                Object oViewMenu2 is a cWebMenuItem
+                    Set psCaption to "Zooms"
+
+                    Object oSelectSchoolHouseItem1 is a cWebMenuItem
+                        Set psCaption to "ZoomSchoolHouse"
+
+                        WebRegisterPath ntNavigateBegin oZoomSchoolHouse
+
+                        Procedure OnClick
+                            Forward Send OnClick
+                                Send NavigatePath
+                        End_Procedure
+                    End_Object
+
+                    Object oSelectStudentItem1 is a cWebMenuItem
+                        Set psCaption to "ZoomStudent"
+
+                        WebRegisterPath ntNavigateBegin oZoomStudent
+
+                        Procedure OnClick
+                            Forward Send OnClick
+                                Send NavigatePath
+                        End_Procedure
+                    End_Object
+                End_Object
 
                 Object oSignOut_itm is a cWebMenuItem
-                    Set psCaption to C_$LogOut
+                    Set psCaption to "Log out"
 
                     Procedure OnClick
                         Send RequestLogOut of ghoWebSessionManager
